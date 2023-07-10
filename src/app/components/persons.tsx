@@ -2,7 +2,7 @@ import { person } from "@/util/static";
 
 export default function Persons() {
   return (
-    <div className=" flex w-full justify-between px-16 items-center">
+    <div className=" flex w-full justify-between px-10 items-center flex-wrap">
       {person.map((item) => {
         return (
           <div className="flex flex-col items-center justify-center cursor-pointer">

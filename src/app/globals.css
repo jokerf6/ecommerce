@@ -15,3 +15,60 @@
     --background-end-rgb: 0, 0, 0;
   }
 }
+body {
+  overflow-x: hidden;
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: rebeccapurple;
+  display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: transparent;
+}
+.tes {
+  background-image: url("/images/cover.png");
+  background-size: cover;
+  background-position: 50%;
+}
+.star-ratings {
+  unicode-bidi: bidi-override;
+  color: #ccc;
+  font-size: 32px;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.star-ratings .fill-ratings {
+  color: #e7711b;
+  padding: 0;
+  position: absolute;
+  z-index: 1;
+  display: block;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+}
+.star-ratings .fill-ratings span {
+  display: inline-block;
+}
+.star-ratings .empty-ratings {
+  padding: 0;
+  display: block;
+  z-index: 0;
+}
