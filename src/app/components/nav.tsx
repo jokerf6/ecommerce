@@ -2,10 +2,15 @@
 import { Icon } from "@iconify/react";
 import React from "react";
 
-export default function Nav() {
+export default function Nav({ shopBox, ShowShopBox }: any) {
   const [display, changeDisplay] = React.useState("hidden");
   function change() {
     display === "hidden" ? changeDisplay("flex") : changeDisplay("hidden");
+  }
+  function showShop() {
+    console.log("sssssssssssssssssssssssssssssssssssssssssssss");
+    shopBox === "" ? ShowShopBox("overflow-y-hidden") : ShowShopBox("");
+    // ShowShopBox("sssss");
   }
   return (
     <div className=" w-full flex justify-between items-center">
@@ -34,7 +39,10 @@ export default function Nav() {
         </div>
       </div>
       <div className=" flex-1  items-center gap-4 justify-end hidden xl:flex lg:flex md:flex">
-        <div className=" flex items-center gap-1 justify-center">
+        <div
+          className=" flex items-center gap-1 justify-center"
+          onClick={() => showShop()}
+        >
           <Icon icon={"maki:shop"} className="  text-xl" />
           <span className=" text-xl hover:underline cursor-pointer">تسوق</span>
         </div>

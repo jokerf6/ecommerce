@@ -50,7 +50,7 @@ export default function Albume({ active, setActive }: any) {
   };
 
   return (
-    <div className=" flex items-center justify-center gap-2">
+    <div className=" flex items-center justify-center gap-2 mt-5">
       <div
         className="border border-black py-4 px-4  h-fit rounded-full cursor-pointer"
         onClick={handleScrollLeft}
@@ -65,9 +65,7 @@ export default function Albume({ active, setActive }: any) {
           return (
             <img
               src={item}
-              className={` w-40  ${
-                active === idx ? "border-2 border-black" : ""
-              }`}
+              className={` w-40  ${active === idx ? " opacity-60" : ""}`}
             />
           );
         })}

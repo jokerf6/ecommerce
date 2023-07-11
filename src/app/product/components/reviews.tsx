@@ -1,5 +1,9 @@
+"use client";
+import Comments from "./comments";
+import RateBox from "./rateBox";
 import Ratings from "./ratings";
 import StarRating from "./ratings";
+import StarRating2 from "./startRating";
 
 export default function Reviews() {
   return (
@@ -7,8 +11,14 @@ export default function Reviews() {
       <h1 className=" text-4xl font-bold bg-slate-200 w-full text-center">
         تقيمات المشترون
       </h1>
-      <div className=" flex flex-row-reverse gap-4 w-full">
-        <div className=" w-1/4 relative flex flex-col gap-4" dir="rtl">
+      <div className="   flex flex-col gap-4 w-full py-2 xl:flex-row-reverse lg:flex-row-reverse md:flex-row-reverse items-center justify-center">
+        <div
+          className="   relative flex flex-col gap-4"
+          style={{
+            width: "90%",
+          }}
+          dir="rtl"
+        >
           <h1>التقييم الاجمالي </h1>
           <div className=" flex gap-2 items-center">
             <Ratings rate="80%" />
@@ -51,9 +61,11 @@ export default function Reviews() {
             <span>60%</span>
           </div>
         </div>
-        <hr className="   border  border-slate-200 h-96" />
-        <div></div>
+        <hr className="   border  border-slate-200 xl:h-96 lg:h-96 md:h-96 " />
+        <Comments />
       </div>
+
+      <RateBox />
     </div>
   );
 }

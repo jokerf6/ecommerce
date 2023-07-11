@@ -64,7 +64,6 @@ export default function Collections() {
         </div>
         <Filter filterBox={filterBox} ShowFilterBox={ShowFilterBox} />
       </div>
-
       <div
         className={` bg-black top-0 ${overlap()}  w-full h-screen  absolute`}
         style={{

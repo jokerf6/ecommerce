@@ -1,6 +1,8 @@
 "use client";
 import { Icon } from "@iconify/react";
 import React from "react";
+import { Modal, Button } from "bootstrap-4-react";
+
 export default function ProductDetails({ active }: any) {
   const images = [
     "/images/clothes1.jpg",
@@ -44,18 +46,28 @@ export default function ProductDetails({ active }: any) {
   }
   const sizes = ["XS", "S", "M", "L", "XL", "XXL", "XXXL"];
   return (
-    <div className=" w-full flex">
-      <div className="w-1/2 mt-10 float-right  flex flex-col gap-4" dir="rtl">
-        <h1 className=" text-2xl font-bold ">
+    <div className=" w-full flex flex-col-reverse xl:flex-row lg:flex-row md:flex-row">
+      <div
+        className="xl:w-1/2 lg:w-1/2 md:w-1/2 w-full mt-10 float-right  flex flex-col gap-4"
+        dir="rtl"
+      >
+        <h1 className=" text-2xl font-bold w-fit" dir="rtl">
           تيشيرت أولادى ظل أخضر تلبيس متناسب مع الجسم - أبيض
         </h1>
-        <span className=" text-slate-400">LE 299.00</span>
-        <p className=" underline cursor-pointer">تقيم المنتج</p>
-        <span>{color}</span>
+        <span className=" text-slate-400 w-fit">LE 299.00</span>
+        <Button
+          primary
+          data-toggle="modal"
+          data-target="#exampleModal"
+          className=" bg-transparent text-black btn2"
+        >
+          تقييم المنتج
+        </Button>{" "}
+        <span className="w-fit">{color}</span>
         <div className=" flex gap-2">
           <img
             src="/images/clothes1.jpg"
-            className=" w-10 hover:opacity-60 cursor-pointer  border-4 border-black"
+            className=" w-10 opacity-60 cursor-pointer"
             onMouseEnter={() => changeColor("أزرق")}
             onMouseLeave={() => back()}
           />
@@ -78,8 +90,8 @@ export default function ProductDetails({ active }: any) {
             onMouseLeave={() => back()}
           />
         </div>
-        <span>
-          Size: <span className=" font-bold ">{sizes[size]}</span>
+        <span className="w-fit">
+          Size: <span className=" font-bold w-fit">{sizes[size]}</span>
         </span>
         <div className=" flex gap-2">
           {sizes.map((item, idx) => {
@@ -125,7 +137,7 @@ export default function ProductDetails({ active }: any) {
           </div>
         </div>
       </div>
-      <div className=" w-1/2 flex items-center justify-center ">
+      <div className=" xl:w-1/2 lg:w-1/2 md:w-1/2 w-full flex items-center justify-center ">
         <img src={images[active]} />
       </div>
     </div>
